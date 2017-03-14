@@ -1,0 +1,1115 @@
+/*Breytur*/
+/*Mixins*/
+/*Imports*/
+/* RESET 
+-------------*/
+@font-face {
+  font-family: gotham;
+  src: url("includes/gotham/Gotham-Book.ttf"); }
+li, ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+body, html {
+  height: 100%;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  background-image: url("http://subtlepatterns.com/images/transp_bg.png"); }
+
+body {
+  font-family: 'Nimbus Sans','Open Sans', "Century Gothic", avenir, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #555;
+  background-attachment: fixed; }
+
+/*
+Elements
+----------------*/
+p {
+  margin: 0;
+  padding: 0;
+  color: #555; }
+
+h1 {
+  font-size: 2em;
+  margin: 10px 0px; }
+
+h2 {
+  font-size: 1.5em;
+  margin: 14px 0px; }
+
+h3 {
+  font-size: 1.1em;
+  color: #999;
+  font-weight: 300;
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: #FF6143; }
+
+a.hover {
+  text-decoration: none;
+  color: #D45137; }
+
+/* PLACEHOLDER 
+----------------*/
+textarea:focus, input:focus {
+  outline: 0; }
+
+/* INPUTS 
+----------------*/
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  color: #FFB300 !important; }
+
+/* static classes 
+----------------*/
+.transit05sec {
+  -webkit-transition: 0.5s;
+  /* For Safari 3.1 to 6.0 */
+  transition: 0.5s; }
+
+.align-center {
+  text-align: center;
+  font-weight: bold; }
+
+.w100 {
+  width: 100%; }
+
+.w50 {
+  width: 50% !important;
+  border-radius: 0px !important; }
+  @media screen and (max-width: 414px) {
+    .w50 {
+      width: 100% !important; } }
+
+.opacity {
+  opacity: 0.5; }
+
+/* MEDIA 
+-------------*/
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles */
+  #page-wrap {
+    width: 100%; }
+
+  #header-wrap {
+    width: 100%; } }
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */ }
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */ }
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */ }
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */ }
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */ }
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */ }
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */ }
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */ }
+.loginbody {
+  min-height: 900px; }
+  @media screen and (max-width: 414px) {
+    .loginbody {
+      min-height: 950px; } }
+
+#logosimple {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  color: #fff;
+  width: 40px;
+  margin-left: -20px;
+  clear: both; }
+
+#login-left {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 1px;
+  left: 1px;
+  background-image: url("img/luckyskies.jpeg"); }
+
+#login-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin-top: -60px;
+  background-image: url("https://ununsplash.imgix.net/photo-1416431168657-a6c4184348ab?q=75&fm=jpg&s=20ba248730c200af0d30c9ba81854867");
+  background-size: cover; }
+
+#hero {
+  position: relative;
+  top: 150px;
+  margin: 0px auto;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 3em;
+  width: 500px; }
+  #hero .future {
+    font-size: 1em;
+    color: #e57373; }
+  @media screen and (max-width: 414px) {
+    #hero {
+      top: 80px;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      font-size: 2em; } }
+
+#whatislucky {
+  position: relative;
+  top: 200px;
+  margin-left: 30px;
+  color: #fff;
+  font-size: 1.3em;
+  width: 500px; }
+  #whatislucky li {
+    margin-top: 10px; }
+  #whatislucky .login-title {
+    font-weight: bold; }
+
+#login-form {
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  width: 500px;
+  margin-left: -250px;
+  border: 0px solid #777;
+  border-bottom: 0px;
+  border-radius: 5px 5px 0px 0px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 40px;
+  background-color: #fff; }
+  @media screen and (max-width: 414px) {
+    #login-form {
+      width: 320px;
+      margin-left: -160px; } }
+  #login-form ul {
+    margin: 0px auto;
+    width: 100%; }
+  #login-form h1 {
+    color: #e57373;
+    font-size: 2.5em;
+    text-align: center; }
+  #login-form li {
+    width: 100%; }
+  #login-form .login-nav {
+    margin: 20px 0px;
+    padding: 10px;
+    width: 49%;
+    color: #fff;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size: 1.2em;
+    cursor: pointer; }
+    @media screen and (max-width: 414px) {
+      #login-form .login-nav {
+        width: 48.99%;
+        font-size: 1em; } }
+  #login-form .signup {
+    border: 2px solid #e57373;
+    background: none;
+    color: #e57373;
+    opacity: 0.4; }
+  #login-form .signup.selected:hover {
+    border: 2px solid #e57373;
+    background-color: #dd4848;
+    color: #fff;
+    opacity: 1; }
+  #login-form .signup.selected {
+    border: 2px solid #e57373;
+    background-color: #e57373;
+    color: #fff;
+    opacity: 1; }
+  #login-form .login {
+    border: 2px solid #00ACC1;
+    background: none;
+    color: #00ACC1;
+    opacity: 0.4; }
+  #login-form .login.selected {
+    border: 2px solid #00ACC1;
+    background-color: #00ACC1;
+    color: #fff;
+    opacity: 1; }
+  #login-form .login.selected:hover {
+    border: 2px solid #00ACC1;
+    background-color: #007f8e;
+    color: #fff;
+    opacity: 1; }
+  #login-form .login-form {
+    display: none; }
+
+#login-lucky {
+  position: absolute;
+  left: 50%;
+  margin-left: -40px;
+  top: -45px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #fff; }
+
+.firstsubmit {
+  border: none;
+  background-color: #e57373;
+  color: #fff;
+  width: 100%;
+  font-size: 1.4em;
+  margin-top: 20px;
+  padding: 15px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px; }
+
+.firstsubmit:hover {
+  background-color: #FFB300; }
+
+.flash {
+  border: none;
+  background-color: #555;
+  color: #fff;
+  width: 100%;
+  font-size: 1.2em;
+  margin-top: 10px;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+button {
+  border: 0px;
+  padding: 10px;
+  font-size: 0.8em;
+  font-weight: bold; }
+
+.form-group {
+  text-align: left;
+  position: relative;
+  background-color: #fff;
+  padding: 8px 50px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin-top: 10px;
+  display: inline-block;
+  width: 100%; }
+  .form-group input {
+    border: 0;
+    font-size: 1em;
+    width: 100%; }
+  .form-group label {
+    text-transform: uppercase;
+    position: relative;
+    color: #555;
+    font-weight: 600;
+    font-size: 0.8em;
+    -webkit-transition: 0.5s;
+    /* For Safari 3.1 to 6.0 */
+    transition: 0.5s; }
+
+.form-group.focused label {
+  text-transform: uppercase;
+  position: relative;
+  color: #999; }
+
+/* HEADER
+------------*/
+#header {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  position: relative;
+  z-index: 10; }
+  #header #header-wrap {
+    width: 1200px;
+    position: relative;
+    margin: 0px auto; }
+    @media screen and (max-width: 414px) {
+      #header #header-wrap {
+        width: 100%; } }
+  #header #phone-menu {
+    display: none; }
+    @media screen and (max-width: 414px) {
+      #header #phone-menu {
+        display: block; } }
+    #header #phone-menu ul {
+      position: relative;
+      top: 10px; }
+    #header #phone-menu .phone-li {
+      display: inline;
+      height: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      font-size: 2.4em;
+      color: #e57373;
+      position: relative; }
+    #header #phone-menu .phone-li:active {
+      color: #d93232; }
+  #header #logo {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    color: #fff;
+    width: 40px;
+    margin-left: -20px;
+    clear: both; }
+    @media screen and (max-width: 414px) {
+      #header #logo {
+        left: 90%; } }
+  #header #login {
+    width: auto;
+    height: auto;
+    padding: 5px 15px;
+    position: absolute;
+    top: 10px;
+    right: 110px;
+    color: #e57373;
+    border: 3px solid #e57373;
+    font-size: 1em;
+    font-weight: bold; }
+  #header #login:hover {
+    color: #fff;
+    border: 3px solid #e15d5d;
+    background-color: #e15d5d; }
+  #header #signup {
+    width: auto;
+    height: auto;
+    padding: 5px 15px;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    color: #e57373;
+    border: 3px solid #e57373;
+    font-size: 1em;
+    font-weight: bold; }
+    @media screen and (max-width: 414px) {
+      #header #signup {
+        display: none; } }
+  #header #signup:hover {
+    color: #fff;
+    border: 3px solid #007f8e;
+    background-color: #007f8e; }
+    @media screen and (max-width: 414px) {
+      #header #signup:hover {
+        display: none; } }
+
+/* Page-Wrap
+------------*/
+#page-wrap {
+  position: relative;
+  width: 1200px;
+  min-height: 100%;
+  background-color: #fff;
+  margin: 0px auto;
+  overflow: hidden; }
+  @media screen and (max-width: 414px) {
+    #page-wrap {
+      width: 100%; } }
+
+#left-sidebar {
+  background-color: #f7f7f7;
+  display: inline-block;
+  float: left;
+  height: 100%;
+  width: 25%;
+  position: relative;
+  z-index: 2; }
+  @media screen and (max-width: 414px) {
+    #left-sidebar {
+      display: none;
+      height: auto; } }
+
+#left-sidebar.show {
+  display: inline;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%; }
+
+#right-sidebar {
+  background-color: #f7f7f7;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 25%;
+  z-index: 2; }
+  @media screen and (max-width: 414px) {
+    #right-sidebar {
+      display: none;
+      height: auto;
+      min-height: 700px; } }
+
+#right-sidebar.show {
+  display: inline;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%; }
+
+#main-section {
+  z-index: 1;
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-color: #fff; }
+  @media screen and (max-width: 414px) {
+    #main-section {
+      width: 100%; } }
+  #main-section #nav {
+    position: relative;
+    margin-bottom: 10px; }
+    #main-section #nav ul {
+      display: inline;
+      position: relative;
+      top: 5px; }
+    #main-section #nav li {
+      display: inline-block;
+      font-size: 1.2em;
+      border-bottom: 5px solid #e57373;
+      width: 50%;
+      padding: 20px 0px 5px 0px;
+      color: #555;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      text-align: center;
+      font-weight: bold;
+      position: relative;
+      opacity: 0.5;
+      cursor: pointer; }
+      #main-section #nav li span {
+        margin: 0px 5px;
+        font-size: 1.5em; }
+        #main-section #nav li span .count {
+          font-size: 0.45em;
+          position: absolute;
+          left: 50%;
+          margin-left: -4px;
+          top: 0px;
+          color: #fff;
+          background-color: #e57373;
+          border: 2px #fff solid;
+          border-radius: 20px;
+          width: 22px;
+          height: 22px;
+          text-align: center; }
+          #main-section #nav li span .count .count-inner {
+            position: relative;
+            top: -1px;
+            left: 0px; }
+    #main-section #nav li.selected {
+      opacity: 1; }
+    #main-section #nav li:hover {
+      border-bottom: 5px solid #111;
+      color: #e57373; }
+      #main-section #nav li:hover .count {
+        background-color: #111; }
+
+.available-ul {
+  list-style-type: none;
+  width: 100%;
+  background-color: #fff; }
+
+.placed-ul {
+  list-style-type: none;
+  width: 100%;
+  display: none; }
+
+.header-li {
+  text-align: center;
+  font-size: 3em;
+  font-family: 'Museo Slab';
+  margin: 20px auto;
+  color: #555; }
+
+.section-li {
+  width: 100%;
+  height: 35px;
+  margin: 10px 0px;
+  padding: 15px 0px;
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+  background: #555;
+  background-size: cover;
+  color: #fff;
+  z-index: 1; }
+
+.section-li-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  background-color: #111;
+  z-index: 2; }
+
+.soccer {
+  color: #fff;
+  background-color: #555; }
+
+.won {
+  color: #fff;
+  background-color: #81C784; }
+
+.lost {
+  color: #fff;
+  background-color: #e57373; }
+
+.bet-li {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0px 12px 0px;
+  position: relative;
+  -webkit-transition: 0.5s;
+  /* For Safari 3.1 to 6.0 */
+  transition: 0.5s;
+  background-color: #f1f1f1;
+  color: #555; }
+
+.bet-li:hover {
+  background-color: #999;
+  color: #fff; }
+
+.placedbet-li {
+  width: 100%;
+  height: 75px;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0px;
+  position: relative;
+  -webkit-transition: 0.5s;
+  /* For Safari 3.1 to 6.0 */
+  transition: 0.5s;
+  background-color: #f1f1f1;
+  color: #555; }
+
+.placedbet-li:hover {
+  background-color: #999;
+  color: #fff; }
+
+.placedbet-wrap {
+  width: 90%;
+  margin-left: 10px; }
+
+.placedbet-stakes {
+  position: absolute;
+  right: 40px;
+  top: 15px;
+  text-align: right; }
+
+.event_name {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 1.5em; }
+
+.placedbet_name {
+  width: 100%;
+  text-align: left;
+  margin-top: 5px;
+  font-size: 1em; }
+
+.adbox {
+  position: relative;
+  width: 100%; }
+  .adbox img {
+    width: 92%;
+    margin: 0px auto;
+    display: block; }
+
+.betslip {
+  background-color: #fff;
+  width: 85%;
+  margin: 10px auto;
+  padding: 10px;
+  min-height: 200px;
+  height: auto;
+  position: relative; }
+  .betslip .remove-from-betslip {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0px;
+    right: 0px;
+    background-color: #e57373;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer; }
+    .betslip .remove-from-betslip .fa {
+      position: absolute;
+      top: 5px;
+      right: 5px; }
+  .betslip .remove-from-betslip:hover {
+    background-color: #d93232; }
+  .betslip .betslip-ul {
+    list-style-type: none;
+    width: 100%; }
+  .betslip .betslip-li {
+    color: #555;
+    margin: 10px 0px 0px 0px;
+    padding: 10px 10px;
+    background-color: #f5f5f5;
+    min-height: 40px;
+    height: auto;
+    border-radius: 3px;
+    position: relative;
+    -webkit-transition: 0.5s;
+    /* For Safari 3.1 to 6.0 */
+    transition: 0.5s; }
+  .betslip .betslip-li:hover {
+    background-color: #EEEEEE; }
+  .betslip .betslip-header {
+    padding: 10px 0px;
+    text-align: center;
+    width: 100%;
+    margin: 6px auto;
+    font-weight: bold; }
+  .betslip .betslip-odds {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-weight: bold; }
+  .betslip .to-win {
+    font-size: 0.8em;
+    color: #999;
+    position: relative;
+    left: 1px; }
+  .betslip .reward {
+    font-weight: bold; }
+  .betslip .betslip-totalstake {
+    display: block;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    margin-top: 15px;
+    height: 30px; }
+  .betslip .betslip-footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px; }
+  .betslip .betslip-removeAll {
+    position: absolute;
+    padding: 5px;
+    bottom: 10px;
+    left: 0px;
+    color: #ccc;
+    font-size: 1em; }
+  .betslip .betslip-removeAll:hover {
+    color: #555; }
+  .betslip .betslip-place {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-weight: bold;
+    padding: 5px 10px; }
+  .betslip .betslip-place:hover {
+    background-color: #d93232; }
+  .betslip .betslip-stake {
+    background-color: #fff;
+    border-bottom: 3px solid #f1b4b4;
+    border-top: 3px solid #f1b4b4;
+    height: 40px;
+    width: 100%;
+    position: relative; }
+  .betslip .betslip-input {
+    width: 76%;
+    height: 20px;
+    font-size: 1.3em;
+    margin: 0;
+    padding: 8px 5px;
+    border: none;
+    margin: 4px 0px;
+    background: none;
+    font-weight: bold;
+    color: #555; }
+  .betslip .betslip-submit {
+    width: 20%;
+    height: 100%;
+    border: none;
+    border-left: 3px solid #f1b4b4;
+    position: absolute;
+    left: 80%;
+    background: none;
+    font-size: 1.3em;
+    color: #ccc;
+    cursor: pointer; }
+  .betslip .betslip-submit:hover {
+    color: #f1b4b4; }
+
+.profile {
+  background-color: #fff;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  height: 200px;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+  .profile .profile-photo {
+    width: 70px;
+    height: 70px;
+    border: 3px solid #555;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #e57373;
+    text-align: center; }
+    .profile .profile-photo i {
+      color: #fff;
+      font-size: 4.2em;
+      position: relative;
+      top: 10px; }
+    .profile .profile-photo img {
+      width: 70px;
+      z-index: 5; }
+  .profile .profile-name {
+    font-weight: bold;
+    position: absolute;
+    left: 100px;
+    top: 25px;
+    color: #555;
+    font-size: 1.3em; }
+  .profile .profile-level {
+    font-weight: bold;
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    color: #555;
+    font-size: 1em;
+    color: #999; }
+  .profile #profile-new-xp {
+    display: none;
+    font-weight: bold;
+    color: #81C784;
+    position: absolute;
+    right: 15px;
+    margin-bottom: 20px;
+    display: block; }
+  .profile .profile-xp-bar {
+    height: 8px;
+    width: 94%;
+    border: 2px solid #999;
+    border-radius: 5px;
+    margin: 20px auto 5px auto;
+    background: none;
+    position: relative;
+    overflow: hidden; }
+  .profile .profile-xp {
+    height: 8px;
+    background-color: #81C784; }
+  .profile .profile-xp:hover {
+    background-color: #4CAF50; }
+  .profile .profile-xp-score {
+    color: #999;
+    position: relative;
+    left: 5px; }
+  .profile .profile-edit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #ccc;
+    font-size: 0.8em; }
+  .profile .profile-edit:hover {
+    color: #555; }
+  .profile .current-xp {
+    font-weight: bold; }
+  .profile .bet-limit {
+    color: #555;
+    position: relative;
+    margin: 10px 0px;
+    left: 5px;
+    font-size: 1em;
+    font-weight: bold; }
+  .profile .current-bet-limit {
+    color: #FFB300; }
+
+/* Single Bet Unit
+------------*/
+.team-a {
+  position: relative;
+  width: 80%;
+  float: left; }
+
+.team-b {
+  position: relative;
+  width: 80%;
+  float: left; }
+
+.team-name {
+  color: #555; }
+
+.score {
+  font-weight: bold;
+  color: #FDD835;
+  position: absolute;
+  right: 0px; }
+
+/* event
+------------*/
+#stats {
+  width: 90%;
+  margin: 10px auto; }
+  #stats .stats-scoreboard {
+    text-align: center;
+    font-size: 3em;
+    font-family: "museo-slab" !important;
+    margin: 20px auto;
+    color: #555; }
+    @media screen and (max-width: 414px) {
+      #stats .stats-scoreboard {
+        font-size: 2em; } }
+  #stats .stats-info {
+    width: 90%;
+    min-height: 130px;
+    margin: 0px auto;
+    position: relative; }
+  #stats .stats-team-a {
+    position: absolute;
+    left: 0px;
+    width: 50%;
+    border-right: 3px solid #999; }
+  #stats .stats-team-b {
+    position: absolute;
+    right: 0px;
+    width: 50%;
+    text-align: right; }
+    #stats .stats-team-b table {
+      position: absolute;
+      right: 0px; }
+  #stats .team-name {
+    font-size: 1.2em;
+    font-weight: bold; }
+  #stats table {
+    width: 97%; }
+
+.event-bets .event-bet {
+  position: relative;
+  min-height: 50px;
+  width: 100%;
+  margin-top: 20px; }
+  .event-bets .event-bet .first {
+    border: none; }
+.event-bets .event-bet-header {
+  padding: 5px 0px;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background-color: #81C784;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2em;
+  text-transform: uppercase; }
+.event-bets .event-bet-link {
+  font-size: 0; }
+.event-bets .event-bet-option {
+  margin: 0px;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  background-color: #999;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-weight: bold;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer; }
+.event-bets .event-bet-option.chosen {
+  background-color: #555;
+  color: #fff; }
+.event-bets .event-bet-option.chosen:hover {
+  background-color: #555;
+  color: #fff; }
+.event-bets .event-bet-option:hover {
+  background-color: #858585; }
+.event-bets .onethird {
+  width: 33.3333333%;
+  border-left: 3px #fff solid;
+  border-bottom: 3px #fff solid; }
+.event-bets .onehalf {
+  width: 50%;
+  border-left: 3px #fff solid; }
+.event-bets .onefull {
+  width: 100%;
+  border-top: 3px #fff solid; }
+.event-bets .bet-actions {
+  display: none; }
+  .event-bets .bet-actions .fa-circle-o-notch {
+    display: none; }
+  @media screen and (max-width: 414px) {
+    .event-bets .bet-actions {
+      position: fixed;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      z-index: 10; } }
+.event-bets .event-bet-action {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  background-color: #999;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-weight: bold;
+  color: #fff;
+  font-size: 19px;
+  width: 50%;
+  cursor: pointer; }
+  @media screen and (max-width: 414px) {
+    .event-bets .event-bet-action {
+      width: 50%; } }
+.event-bets .event-bet-action:hover {
+  background-color: #fff;
+  color: #555; }
+.event-bets .placebet {
+  background-color: #66BB6A;
+  margin: 0;
+  border-right: 3px solid #fff; }
+.event-bets .addtobetslip {
+  background-color: #4DD0E1;
+  border: none; }
+.event-bets .cancelbet {
+  background-color: #ef5350;
+  border: none; }
+.event-bets .event-bet-input {
+  border: none;
+  background: #fff;
+  color: #555;
+  width: 100%;
+  font-size: 1em;
+  margin: 0;
+  padding: 20px 0px;
+  text-align: center;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-weight: bold;
+  border-radius: 0; }
+  @media screen and (max-width: 414px) {
+    .event-bets .event-bet-input {
+      font-size: 1em;
+      position: relative;
+      bottom: 0; } }
+.event-bets .event-bet-input::-webkit-input-placeholder {
+  font-size: 1em;
+  color: #e57373;
+  padding: 2px 0px;
+  font-weight: bold; }
+.event-bets .event-bet-input.selected::-webkit-input-placeholder {
+  font-size: 1em;
+  color: #999;
+  padding: 2px 0px;
+  font-weight: bold; }
+.event-bets .event-bet-odds {
+  color: #FFECB3;
+  font-size: 0.8em;
+  margin-left: 10px; }
+
+/* BUTTONS & INPUTS
+------------*/
+.bet-button-one {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 5px 15px;
+  color: #555;
+  font-weight: bold;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  margin: 4px;
+  position: absolute;
+  right: 40px;
+  top: 10px; }
+
+.sidebar-button {
+  background-color: #fff;
+  width: 90%;
+  margin: 10px auto;
+  padding: 18px 10px;
+  min-height: 40px;
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 1.2em;
+  color: #555; }
+
+.sidebar-button:hover {
+  background-color: #999;
+  color: #fff; }
+
+.red {
+  background-color: #e57373;
+  color: #fff; }
+
+.golden {
+  background-color: #FFB74D;
+  color: #fff; }
+
+.goldenfont {
+  color: #FFB74D; }
+
+#attentionBox {
+  border: none;
+  background-color: #81C784;
+  color: #fff;
+  width: 100%;
+  font-size: 1.4em;
+  position: fixed;
+  bottom: -200px;
+  left: 0;
+  z-index: 300;
+  padding: 15px 0px;
+  font-weight: bold;
+  text-align: center; }
+  @media screen and (max-width: 414px) {
+    #attentionBox {
+      font-size: 1em; } }

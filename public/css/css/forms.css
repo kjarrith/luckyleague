@@ -1,0 +1,32 @@
+button {
+  border: 0px;
+  padding: 10px;
+  font-size: 0.8em;
+  font-weight: bold; }
+
+.form-group {
+  text-align: left;
+  position: relative;
+  width: 50%;
+  background-color: #fff;
+  padding: 8px 50px 10px 10px;
+  margin: 10px;
+  border: 1px solid #999;
+  border-radius: 2px; }
+  .form-group input {
+    border: 0;
+    font-size: 1em; }
+  .form-group label {
+    text-transform: uppercase;
+    position: relative;
+    color: #555;
+    font-weight: 600;
+    font-size: 0.8em;
+    -webkit-transition: 0.5s;
+    /* For Safari 3.1 to 6.0 */
+    transition: 0.5s; }
+
+.form-group.focused label {
+  text-transform: uppercase;
+  position: relative;
+  color: #999; }

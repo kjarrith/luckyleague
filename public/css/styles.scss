@@ -1,0 +1,1023 @@
+@charset "UTF-8";
+
+/*Breytur*/
+ 
+$red : #e57373;
+$luckyred : #ff4f4f;
+$blue : #00ACC1;
+$coins : #FFB300;
+$green : #81C784;
+$odds : #FFECB3;
+$darkblue : darken( $blue, 5% ) ;
+$verydarkblue : darken( $blue, 15% ) ;
+$break-small: 414px;
+
+/*Mixins*/
+
+@mixin border-radius($radius: 5px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin margin-center($firstmargin: 0px) {
+	margin: $firstmargin auto;
+}
+
+@mixin border-box() {
+	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+/*Imports*/
+
+	@import "partials/global.scss";
+	@import "partials/media.scss";
+	@import "partials/login.scss";
+	@import "partials/forms.scss";
+
+/* HEADER
+------------*/
+
+#header {
+	width: 100%;
+	height: 60px;
+	border-bottom: 1px solid #ccc;
+	background-color: #fff;
+	position: relative;
+	z-index: 10;
+
+	#header-wrap {
+	width: 1200px;
+	position: relative;
+	@include margin-center();
+
+	@media screen and (max-width: $break-small) {
+		    width: 100%;
+		 }
+	}
+
+	#phone-menu {
+		display: none;
+
+		@media screen and (max-width: $break-small) {
+		    display: block;
+		 }
+
+		 ul{
+		 	position: relative;
+		 	top: 10px;
+		 }
+
+		 .phone-li{
+		 	display: inline;
+		 	height: 100%;
+		 	padding: 10px;
+		 	@include border-box();
+		 	font-size: 2.4em;
+		 	color: $red;
+		 	position: relative;
+		 }
+
+		 .phone-li:active {
+		 	color:darken($red,15%);
+		 }
+
+	}
+
+	#logo {
+		position: absolute;
+		left: 50%;
+		top: 10px;
+		color: #fff;
+		width: 40px;
+		margin-left:-20px;
+		clear: both;
+		@media screen and (max-width: $break-small) {
+		    left: 90%;
+		 }
+	}
+
+	#login {
+		width: auto;
+		height: auto;
+		padding: 5px 15px;
+		position: absolute;
+		top: 10px;
+		right: 110px;
+		color: $red;
+		border:3px solid $red;
+		font-size: 1em;
+		font-weight: bold;
+	}
+
+	#login:hover {
+		color: #fff;
+		border:3px solid darken( $red, 5% ) ;
+		background-color: darken( $red, 5% ) ;
+	}
+
+	#signup {
+		width: auto;
+		height: auto;
+		padding: 5px 15px;
+		position: absolute;
+		top: 10px;
+		right: 0px;
+		color: $red;
+		border:3px solid $red;
+		font-size: 1em;
+		font-weight: bold;
+
+		@media screen and (max-width: $break-small) {
+		    display: none;
+		 }
+	}
+
+	#signup:hover {
+		color: #fff;
+		border:3px solid darken( $darkblue, 5% ) ;
+		background-color: darken( $darkblue	, 5% ) ;
+		@media screen and (max-width: $break-small) {
+		    display: none;
+		 }
+	}
+}
+
+
+/* Page-Wrap
+------------*/
+
+#page-wrap {
+	position: relative;
+	width: 1200px;
+	min-height: 100%;
+	background-color: #fff;
+	@include margin-center();
+	overflow: hidden;
+
+	@media screen and (max-width: $break-small) {
+		    width: 100%;
+		 }
+
+}
+
+#left-sidebar {
+	background-color: #f7f7f7;
+	display: inline-block;
+	float: left;
+	height: 100%;
+	width: 25%;
+	position: relative;
+	z-index: 2;
+
+	@media screen and (max-width: $break-small) {
+	    display: none;
+	    height: auto;
+	 }
+}
+
+#left-sidebar.show{
+	display: inline;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+#right-sidebar {
+	background-color: #f7f7f7;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	height: 100%;
+	width: 25%;
+	z-index: 2;
+
+	@media screen and (max-width: $break-small) {
+	    display: none;
+	    height: auto;
+	    min-height: 700px;
+	 }
+}
+
+#right-sidebar.show{
+	display: inline;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+#main-section {
+	z-index: 1;
+	display: inline-block;
+	position: relative;
+	width: 50%;
+	height: 100%;
+	background-color: #fff;
+
+	@media screen and (max-width: $break-small) {
+	    width: 100%;
+	 }
+
+	#nav {
+		position: relative;
+		margin-bottom: 10px;
+		ul{
+			display: inline;
+			position: relative;
+			top: 5px;
+		}
+		li {
+			display: inline-block;
+			font-size: 1.2em;
+			border-bottom: 5px solid $red;
+			width: 50%;
+			padding: 20px 0px 5px 0px;
+			color:#555;
+			@include border-box();
+			text-align: center;
+			font-weight: bold;
+			position: relative;
+			opacity: 0.5;
+			cursor: pointer;
+			span {
+				margin: 0px 5px;
+				font-size: 1.5em;
+
+				.count{
+					font-size: 0.45em;
+					position: absolute;
+					left: 50%;
+					margin-left: -4px;
+					top: 0px;
+					color:#fff;
+					background-color: $red;
+					border: 2px #fff solid;
+					border-radius: 20px;
+					width: 22px;
+					height: 22px;
+					text-align: center;
+
+					.count-inner {
+						position: relative;
+						top: -1px;
+						left: 0px;
+					}
+
+				}
+			}
+
+		}
+
+		li.selected {
+			opacity: 1;
+		}
+		li:hover {
+			border-bottom: 5px solid #111;
+			color:$red;
+
+			.count {
+				background-color: #111;
+			}
+		}
+	}
+}
+
+
+
+.available-ul {
+	list-style-type: none;
+	width: 100%;
+	background-color: #fff;
+}
+
+.placed-ul {
+	list-style-type: none;
+	width: 100%;
+	display: none;
+}
+
+.header-li {
+	text-align: center;
+	font-size: 3em;
+	font-family: 'Museo Slab';
+	margin: 20px auto;
+	color: #555;
+}
+
+.section-li {
+	width: 100%;
+	height: 35px;
+	margin: 10px 0px;
+	padding: 15px 0px;
+	position: relative;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.5em;
+	background: #555;
+	background-size: cover;
+	color: #fff;
+	z-index: 1;
+}
+
+.section-li-overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	opacity: 0.7;
+	background-color: #111;
+	z-index: 2;
+}
+
+.soccer {
+	color: #fff;
+	background-color: #555;
+}
+
+.won {
+	color: #fff;
+	background-color: $green;
+}
+
+.lost {
+	color: #fff;
+	background-color: $red;
+}
+
+.bet-li {
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid #ccc;
+	padding: 8px 0px 12px 0px;
+	position: relative;
+	-webkit-transition:  0.5s; /* For Safari 3.1 to 6.0 */
+    transition:  0.5s;
+    background-color: #f1f1f1;
+    color:#555;
+}
+
+.bet-li:hover {
+	background-color: #999;
+	color:#fff;
+}
+
+.placedbet-li {
+	width: 100%;
+	height: 75px;
+	border-bottom: 1px solid #ccc;
+	padding: 8px 0px;
+	position: relative;
+	-webkit-transition:  0.5s; /* For Safari 3.1 to 6.0 */
+    transition:  0.5s;
+    background-color: #f1f1f1;
+    color:#555;
+}
+
+.placedbet-li:hover {
+	background-color: #999;
+	color:#fff;
+}
+
+.placedbet-wrap {
+	width: 90%;
+	margin-left: 10px;
+}
+
+.placedbet-stakes {
+	position: absolute;
+	right: 40px;
+	top: 15px;
+	text-align: right;
+}
+
+.event_name {
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 8px;
+	font-size: 1.5em;
+}
+
+.placedbet_name {
+	width: 100%;
+	text-align: left;
+	margin-top: 5px;
+	font-size: 1em;
+}
+
+
+
+.adbox {
+	position: relative;
+	width: 100%;
+
+	img {
+		width: 92%;
+		margin: 0px auto;
+		display: block;
+	}
+}
+
+.betslip {
+	background-color: #fff;
+	width: 85%;
+	margin: 10px auto;
+	padding: 10px;
+	min-height: 200px;
+	height: auto;
+	position: relative;
+
+	.remove-from-betslip {
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		top: 0px;
+		right: 0px;
+		background-color: $red;
+		color: #fff;
+		font-size: 1em;
+		cursor: pointer;
+
+		.fa {
+			position: absolute;
+			top: 5px;
+			right: 5px;
+		}
+	}
+
+	.remove-from-betslip:hover {
+		background-color: darken($red,15%);
+	}
+
+	.betslip-ul {
+		list-style-type: none;
+		width: 100%;
+	}
+
+	.betslip-li {
+		color: #555;
+		margin: 10px 0px 0px 0px;
+		padding: 10px 10px;
+		background-color: #f5f5f5;
+		min-height: 40px;
+		height: auto;
+		border-radius: 3px;
+		position: relative;
+		-webkit-transition:  0.5s; /* For Safari 3.1 to 6.0 */
+    	transition:  0.5s;
+	}
+
+	.betslip-li:hover {
+		background-color: #EEEEEE;
+	}
+
+	.betslip-header {
+		padding: 10px 0px;
+		text-align: center;
+		width: 100%;
+		margin: 6px auto;
+		font-weight: bold;
+	}
+
+	.betslip-odds {
+		position: absolute;
+		right: 5px;
+		bottom: 5px;
+		font-weight: bold;
+	}
+
+	.to-win {
+		font-size: 0.8em;
+		color: #999;
+		position: relative;
+		left: 1px;
+	}
+
+	.reward {
+		font-weight: bold;
+	}
+
+	.betslip-totalstake {
+		display: block;
+		position: relative;
+		text-align: center;
+		font-weight: bold;
+		color: #555;
+		margin-top: 15px;
+		height: 30px;
+	}
+
+	.betslip-footer {
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		height: 50px;
+	}
+
+	.betslip-removeAll {
+		position: absolute;
+		padding: 5px;
+		bottom: 10px;
+		left: 0px;
+		color: #ccc;
+		font-size: 1em;
+	}
+
+	.betslip-removeAll:hover {
+		color: #555;
+	}
+
+	.betslip-place {
+		position: absolute;
+		right: 20px;
+		bottom: 10px;
+		font-weight: bold;
+		padding: 5px 10px;
+	}
+
+	.betslip-place:hover {
+		background-color: darken($red,15%);
+	}
+
+	.betslip-stake {
+		background-color: #fff;
+		border-bottom: 3px solid lighten($red,15%);
+		border-top: 3px solid lighten($red,15%);
+		height: 40px;
+		width: 100%;
+		position: relative;
+	}
+
+	.betslip-input {
+		width: 76%;
+		height: 20px;
+		font-size: 1.3em;
+		margin: 0;
+		padding: 8px 5px;
+		border: none;
+		margin: 4px 0px;
+		background: none;
+		font-weight: bold;
+		color: #555;
+	}
+
+	.betslip-submit {
+		width: 20%;
+		height: 100%;
+		border:none;
+		border-left: 3px solid lighten($red,15%);
+		position: absolute;
+    	left: 80%;
+    	background: none;
+    	font-size: 1.3em;
+    	color: #ccc;
+    	cursor: pointer;
+
+	}
+
+	.betslip-submit:hover {
+		color: lighten($red,15%);
+	}
+
+}
+
+.profile {
+	background-color: #fff;
+	width: 90%;
+	margin: 10px auto;
+	padding: 10px;
+	height: 200px;
+	position: relative;
+	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+	.profile-photo {
+		width: 70px;
+		height: 70px;
+		border: 3px solid #555;
+		border-radius: 50%;
+		overflow: hidden;
+		background-color: $red;
+		text-align: center;
+
+		i {
+			color: #fff;
+			font-size: 4.2em;
+			position: relative;
+			top: 10px;
+		}
+
+		img {
+			width: 70px;
+			z-index: 5;
+		}
+	}
+
+	.profile-name {
+		font-weight: bold;
+		position: absolute;
+		left: 100px;
+		top: 25px;
+		color: #555;
+		font-size: 1.3em;
+	}
+
+	.profile-level {
+		font-weight: bold;
+		position: absolute;
+		left: 100px;
+		top: 50px;
+		color: #555;
+		font-size: 1em;
+		color: #999;
+	}
+
+	#profile-new-xp {
+		display: none;
+		font-weight: bold;
+		color: $green;
+		position: absolute;
+		right: 15px;
+		margin-bottom: 20px;
+		display: block;
+	}
+
+	.profile-xp-bar {
+		height: 8px;
+		width: 94%;
+		border: 2px solid #999;
+		border-radius: 5px;
+		margin: 20px auto 5px auto;
+		background:none;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.profile-xp {
+		height: 8px;
+		background-color: #81C784;
+	}
+
+	.profile-xp:hover {
+		background-color: #4CAF50;
+	}
+
+	.profile-xp-score {
+		color: #999;
+		position: relative;
+		left: 5px;
+	}
+
+	.profile-edit {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+		color: #ccc;
+		font-size: 0.8em;
+	}
+
+	.profile-edit:hover {
+		color: #555;
+	}
+
+	.current-xp {
+		font-weight: bold;
+	}
+
+	.bet-limit {
+		color: #555;
+		position: relative;
+		margin: 10px 0px;
+		left: 5px;
+		font-size: 1em;
+		font-weight: bold;
+	}
+
+	.current-bet-limit {
+		color: #FFB300;
+	}
+}
+
+/* Single Bet Unit
+------------*/
+.team-a {
+	position: relative;
+	width: 80%;
+	float: left;
+}
+
+.team-b {
+	position: relative;
+	width: 80%;
+	float: left;
+}
+
+.team-name {
+	color: #555;
+}
+
+.score {
+	font-weight: bold;
+	color: #FDD835;
+	position: absolute;
+	right: 0px;
+}
+
+
+/* event
+------------*/
+
+#stats {
+	width: 90%;
+	margin: 10px auto;
+
+	.stats-scoreboard {
+		text-align: center;
+		font-size: 3em;
+		font-family: 'museo-slab'!important;
+		margin: 20px auto;
+		color: #555;
+
+		@media screen and (max-width: $break-small) {
+		    font-size: 2em;
+		 }
+	}
+
+	.stats-info {
+		width: 90%;
+		min-height: 130px;
+		margin: 0px auto;
+		position: relative;
+	}
+
+	.stats-team-a {
+		position: absolute;
+		left: 0px;
+		width: 50%;
+		border-right: 3px solid #999;
+
+	}
+
+	.stats-team-b {
+		position: absolute;
+		right: 0px;
+		width: 50%;
+		text-align: right;
+
+		table {
+			position: absolute;
+			right: 0px;
+		}
+	}
+
+	.team-name {
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+
+	table {
+		width: 97%;
+	}
+}
+
+.event-bets {
+
+	.event-bet {
+		position: relative;
+		min-height: 50px;
+		width: 100%;
+		margin-top:20px;
+
+		.first {
+			border: none;
+		}
+	}
+
+	.event-bet-header {
+		padding: 5px 0px;
+		width: 100%;
+		height: 40px;
+		text-align: center;
+		background-color: $green;
+		color: #fff;
+		font-weight: bold;
+		font-size: 2em;
+		text-transform: uppercase;
+	}
+
+	.event-bet-link {
+		//TO AVOID 
+		font-size: 0;
+	}
+
+	.event-bet-option {
+		margin: 0px;
+		padding: 10px;
+		text-align: center;
+		display: inline-block;
+		background-color: #999;
+		@include border-box();
+	    font-weight: bold;
+	    color: #fff;
+	    font-size: 16px;
+	    cursor: pointer;
+	}
+
+	.event-bet-option.chosen{
+		background-color: #555;
+		color: #fff;
+	}
+
+	.event-bet-option.chosen:hover{
+		background-color: #555;
+		color: #fff;
+	}
+
+	.event-bet-option:hover{
+		background-color: darken(#999, 8%);
+	}
+
+	.onethird {
+		width: 33.3333333%;
+		border-left: 3px #fff solid;
+		border-bottom: 3px #fff solid;
+	}
+
+	.onehalf {
+		width: 50%;
+		border-left: 3px #fff solid;
+	}
+	.onefull {
+		width: 100%;
+		border-top: 3px #fff solid;
+	}
+
+	.bet-actions {
+		display: none;
+
+		.fa-circle-o-notch {
+			display: none;
+		}
+		@media screen and (max-width: $break-small) {
+		    position: fixed;
+		    bottom: 0px;
+		    left: 0px;
+		    width: 100%;
+		    z-index: 10;
+		  }
+	}
+
+	.event-bet-action {
+		margin: 0;
+		padding: 10px;
+		text-align: center;
+		display: inline-block;
+		background-color: #999;
+		@include border-box();
+	    font-weight: bold;
+	    color: #fff;
+	    font-size: 19px;
+	    width: 50%;
+	    cursor:pointer;
+
+	    @media screen and (max-width: $break-small) {
+		    width: 50%;
+		  }
+
+	}
+
+	.event-bet-action:hover {
+		background-color: #fff;
+		color: #555;
+	}
+
+	.placebet {
+		background-color: #66BB6A;
+		margin: 0;
+		border-right: 3px solid #fff;
+	}
+
+	.addtobetslip {
+		background-color: #4DD0E1;
+		border: none;
+	}
+
+	.cancelbet {
+		background-color: #ef5350;
+		border: none;
+	}
+
+	.event-bet-input {
+		border: none;
+		background:#fff;
+		color: #555;
+		width: 100%;
+		font-size: 1em;
+		margin: 0;
+		padding: 20px 0px;
+		text-align: center;
+		@include border-box();
+		font-weight: bold;
+		border-radius: 0;
+		
+		@media screen and (max-width: $break-small) {
+		    font-size: 1em;
+		    position: relative;
+		    bottom: 0;
+		 }
+
+	}
+
+	.event-bet-input::-webkit-input-placeholder {
+	  font-size:1em; color:$red;  padding:2px 0px; font-weight:bold;
+	}
+
+	.event-bet-input.selected::-webkit-input-placeholder {
+	  font-size:1em; color:#999;  padding:2px 0px; font-weight:bold;
+	}
+
+	.event-bet-odds {
+		color: #FFECB3;
+		font-size: 0.8em;
+		margin-left: 10px;
+	}
+}
+
+
+/* BUTTONS & INPUTS
+------------*/
+
+.bet-button-one {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	padding: 5px 15px;
+	color: #555;
+	font-weight: bold;
+	@include border-radius(3px); 
+	margin: 4px;
+	position: absolute;
+	right: 40px;
+	top: 10px;
+}
+
+
+.sidebar-button {
+	background-color: #fff;
+	width: 90%;
+	margin: 10px auto;
+	padding: 18px 10px;
+	min-height: 40px;
+	position: relative;
+	font-weight: bold;
+	text-align: center;
+	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.sidebar-button:hover {
+	background-color: #999;
+	color: #fff;
+}
+
+.red {
+	background-color: #e57373;
+	color: #fff;
+}
+
+.golden {
+	background-color: #FFB74D;
+	color: #fff;
+}
+
+.goldenfont {
+	color: #FFB74D;
+}
+
+#attentionBox {
+	border: none;
+	background-color: $green;
+	color: #fff;
+	width: 100%;
+	font-size: 1.4em;
+	position: fixed;
+	bottom: -200px;
+	left: 0;
+	z-index: 300;
+	padding: 15px 0px;
+	font-weight: bold;
+	text-align: center;
+
+	@media screen and (max-width: $break-small) {
+	    font-size: 1em;
+	  }
+}
+

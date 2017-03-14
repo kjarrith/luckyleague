@@ -1,0 +1,118 @@
+/* RESET 
+-------------*/
+
+	@font-face
+	{
+	font-family: gotham;
+	src: url('includes/gotham/Gotham-Book.ttf')
+	}
+
+	li,ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+
+	body, html {
+		height: 100%;
+		background-color: #fff;
+	  	margin: 0;
+		padding: 0;
+		background-image: url('http://subtlepatterns.com/images/transp_bg.png');
+	}
+
+	body {
+		font-family: 'Nimbus Sans','Open Sans', "Century Gothic", avenir, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		min-height: 100%;
+		margin: 0;
+		padding: 0;
+		-webkit-font-smoothing: antialiased;
+		color: #555;
+		background-attachment: fixed;
+	}
+
+/*
+Elements
+----------------*/
+
+p {
+	margin: 0;
+	padding: 0;
+	color: #555;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 10px 0px;
+}
+
+h2 {
+	font-size: 1.5em;
+	margin: 14px 0px;
+}
+
+h3 {
+	font-size: 1.1em;
+	color: #999;
+	font-weight: 300;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #FF6143;
+}
+a.hover {
+	text-decoration: none;
+	color: #D45137;
+}
+
+
+/* PLACEHOLDER 
+----------------*/
+
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+/* INPUTS 
+----------------*/
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    color: $coins !important;
+}
+
+
+/* static classes 
+----------------*/
+
+.transit05sec {
+	-webkit-transition:  0.5s; /* For Safari 3.1 to 6.0 */
+    transition:  0.5s;
+}
+
+.align-center {
+	text-align: center;
+	font-weight: bold;
+}
+
+.w100 {
+	width: 100%;
+}
+
+.w50 {
+	width: 50% !important;
+	border-radius: 0px !important;
+
+	@media screen and (max-width: $break-small) {
+		    width: 100% !important;
+		 }
+}
+
+.opacity {
+	opacity: 0.5;
+}

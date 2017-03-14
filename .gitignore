@@ -1,0 +1,16 @@
+/bootstrap/compiled.php
+/vendor
+composer.phar
+composer.lock
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
+.idea
+.sass-cache
+
+public/css/.sass-cache/3f7d16913d461c44ce06dd257b2808825519fc4d/global.scssc
+
+public/css/.sass-cache/ea85ecb49e222afca191d08dd931ebb69a4d41da/styles.scssc
+
+.env

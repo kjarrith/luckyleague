@@ -1,0 +1,93 @@
+<?php
+
+class SessionsController extends \BaseController {
+
+	/**
+	 * Show the login form
+	 * GET /sessions/create
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		return View::make('sessions.create');
+	}
+
+	/**
+	 * Store a new session
+	 * POST /sessions
+	 *
+	 * @return Response
+	 */
+	public function store()
+	{
+
+		//validate
+
+		$input = Input::all();
+
+		$attempt = Auth::attempt([
+			'email' => $input['email'],
+			'password' => $input['password']
+		]);
+
+		if ($attempt) return Redirect::intended('/');
+
+		return Redirect::back()->with('flash_message', 'Wrong info');
+	}
+
+	/**
+	 * Store a newly created resource in storage.
+	 * POST /sessions
+	 *
+	 * @return Response
+	 */
+
+	public function newuser()
+	{
+
+		$input = Input::all();
+
+		$passwordhash = Hash::make($input['password']);
+
+		$invites = DB::table('invitecodes')->where('code', $input['invite'])->count();
+		$hasemail = DB::table('users')->where('email', $input['email'])->count();
+
+		if ($hasemail > 0)
+		{
+			return Redirect::back()->with('flash_message', 'Email is taken')->withInput();
+		}
+		else if ($invites > 0)
+		{
+
+			DB::insert('insert into users (email,password,first_name,last_name,level,current_xp,current_balance) values (?,?,?,?,1,0,5000)', array($input['email'],$passwordhash,$input['firstname'],$input['lastname']));
+
+			$attempt = Auth::attempt([
+				'email' => $input['email'],
+				'password' => $input['password']
+			]);
+
+			if ($attempt) return Redirect::intended('/');
+
+		}
+		else
+		{
+			return Redirect::back()->with('flash_message', 'False invite?')->withInput();
+		}
+	}
+
+    /**
+     * Destroy a session and redirect user to homepage
+     *
+     * DELETE /sessions/{id}
+     * @return Response
+     * @internal param int $id
+     */
+	public function destroy()
+	{
+		Auth::logout();
+
+		return Redirect::to('/');
+	}
+
+}

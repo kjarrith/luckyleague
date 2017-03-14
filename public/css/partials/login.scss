@@ -1,0 +1,214 @@
+.loginbody {
+	min-height:900px;
+
+	@media screen and (max-width: $break-small) {
+		    min-height:950px;
+		 }
+}
+
+#logosimple {
+	position: absolute;
+	left: 50%;
+	top: 10px;
+	color: #fff;
+	width: 40px;
+	margin-left:-20px;
+	clear: both;
+}
+
+#login-left {
+	width: 50%;
+	height: 100%;
+	position: fixed;
+	top: 1px;
+	left: 1px;
+	background-image: url('img/luckyskies.jpeg');
+}
+
+#login-wrap {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin-top: -60px;
+	background-image: url('https://ununsplash.imgix.net/photo-1416431168657-a6c4184348ab?q=75&fm=jpg&s=20ba248730c200af0d30c9ba81854867');
+	background-size: cover;
+}
+
+#hero {
+	position: relative;
+	top: 150px;
+	margin: 0px auto;
+	text-align: center;
+	color:#fff;
+	font-weight: bold;
+	font-size: 3em;
+	width: 500px;
+
+	.future {
+		font-size: 1em;
+		color:#e57373;
+	}
+
+	@media screen and (max-width: $break-small) {
+		    top: 80px;
+		    width: 100%;
+		    padding: 20px;
+		    @include border-box();
+		    font-size: 2em;
+		 }
+}
+
+#whatislucky {
+	position: relative;
+	top: 200px;
+	margin-left: 30px;
+	color:#fff;
+	font-size: 1.3em;
+	width: 500px;
+
+
+	li {
+		margin-top:10px;
+	}
+
+	.login-title{
+		font-weight: bold;
+	}
+}
+
+#login-form {
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	width: 500px;
+	margin-left:-250px;
+	border: 0px solid #777;
+	border-bottom: 0px;
+	border-radius: 5px 5px 0px 0px; 
+	@include border-box();
+	padding:40px;
+	background-color: #fff;
+
+	@media screen and (max-width: $break-small) {
+	    width: 320px;
+	    margin-left:-160px;
+	  }
+
+	ul {
+		margin: 0px auto;
+		width: 100%;
+	}
+
+	h1 {
+		color: $red;
+		font-size: 2.5em;
+		text-align: center;
+	}
+
+	li {
+		width: 100%;
+	}
+
+	.login-nav {
+		margin: 20px 0px;
+		padding: 10px;
+		width: 49%;
+		color:#fff;
+		@include border-box();
+		font-size: 1.2em;
+		cursor: pointer;
+		@media screen and (max-width: $break-small) {
+		    width: 48.99%;
+		    font-size: 1em;
+		 }
+	}
+
+	.signup {
+		border: 2px solid $red;
+		background:none;
+		color:$red;
+		opacity: 0.4;
+	}
+
+	.signup.selected:hover {
+		border: 2px solid $red;
+		background-color:darken($red,10%);
+		color:#fff;
+		opacity: 1;
+	}
+
+	.signup.selected {
+		border: 2px solid $red;
+		background-color:$red;
+		color:#fff;
+		opacity: 1;
+	}
+
+	.login {
+		border: 2px solid $blue;
+		background:none;
+		color:$blue;
+		opacity: 0.4;
+	}
+
+	.login.selected {
+		border: 2px solid $blue;
+		background-color:$blue;
+		color:#fff;
+		opacity: 1;
+	}
+
+	.login.selected:hover {
+		border: 2px solid $blue;
+		background-color:darken($blue,10%);
+		color:#fff;
+		opacity: 1;
+	}
+
+	.login-form {
+		display: none;
+	}
+}
+
+#login-lucky {
+	position: absolute;
+	left: 50%;
+	margin-left: -40px;
+	top: -45px;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border:3px solid #fff;
+}
+
+.firstsubmit {
+	border: none;
+	background-color: $red;
+	color: #fff;
+	width: 100%;
+	font-size: 1.4em;
+	margin-top: 20px;
+	padding: 15px;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+.firstsubmit:hover {
+	background-color: $coins;
+}
+
+.flash {
+	border: none;
+	background-color: #555;
+	color: #fff;
+	width: 100%;
+	font-size: 1.2em;
+	margin-top: 10px;
+	padding: 10px;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 2px;
+	@include border-box();
+}
