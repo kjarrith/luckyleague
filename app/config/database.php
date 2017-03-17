@@ -55,8 +55,8 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'luckyleague',
-			'username'  => 'luckyleague',
+			'database'  => 'luckyleage',
+			'username'  => 'root',
 			'password'  => 'QRDAf6TawwZ9DFy6',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
