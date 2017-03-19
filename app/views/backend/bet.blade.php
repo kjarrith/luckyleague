@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'admin/assets/initiate/connect.php';
 require_once 'admin/assets/initiate/sqli.php';
 
@@ -62,7 +62,7 @@ if (isset($_POST['eventName'])) {
 
     <!-- INCLUDE SIDEBAR -->
     @include('layouts.partials.admin.sidebar')
-    
+
     <!-- START PAGE-CONTAINER -->
     <div class="page-container">
         <!-- INCLUDE HEADER -->
@@ -173,7 +173,7 @@ if (isset($_POST['eventName'])) {
                         </select>
                       </div>
                       <br>
-                      <input type="hidden" name="eventID" value="{{$eventID}}"> 
+                      <input type="hidden" name="eventID" value="{{$eventID}}">
                       <button class="btn btn-success" type="submit">Submit</button>
                       <button class="btn btn-default"><i class="pg-close"></i> Clear</button>
                     </form>
@@ -236,16 +236,10 @@ if (isset($_POST['eventName'])) {
                   <div class="currentBetlings">
                       @foreach($bet->betlings as $betling)
                       <div class="btn-group sm-m-t-10">
-                            <button type="button" class="btn btn-default"><i class="fa fa-save"></i>
-                            </button>
-                            <button type="button" class="btn btn-default active"><i class="fa fa-copy"></i>
-                            </button>
-                            <button type="button" class="btn btn-default"><i class="fa fa-clipboard"></i>
-                            </button>
-                            <button type="button" class="btn btn-default"><i class="fa fa-paperclip"></i>
+                            <button type="button" class="btn btn-default click-editBet" data-betlingID="{{{$betling->id}}}" data-betID="{{{$betling->bet_id}}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             </button>
                           </div>
-                      <?php 
+                      <?php
                         $winner = "";
                         if($betling->status == 1 ){
                           $winner = 'winner';
@@ -255,27 +249,27 @@ if (isset($_POST['eventName'])) {
                       @endforeach
                   </div>
                   <br/>
-                    <form id="form-project" role="form" method="POST" autocomplete="off" action="createNewBetling" name="new_event" data-newBetling="data-newBetling"> 
-                        <p>Add a bet option</p> 
-                        <div class="form-group-attached"> 
-                            <div class="form-group form-group-default required"> 
-                            <label>Title (60 letters max)</label> 
-                            <input type="text" class="form-control" name="betlingTitle" required> 
-                            </div> 
-                        </div> 
-                        <br> 
-                        <div class="form-group-attached"> 
-                            <div class="form-group form-group-default required"> 
-                            <label>Odds (numerical)</label> 
-                            <input type="text" class="form-control" name="betlingOdds" required> 
+                    <form id="form-project" role="form" method="POST" autocomplete="off" action="createNewBetling" name="new_event" data-newBetling="data-newBetling">
+                        <p>Add a bet option</p>
+                        <div class="form-group-attached">
+                            <div class="form-group form-group-default required">
+                            <label>Title (60 letters max)</label>
+                            <input type="text" class="form-control" name="betlingTitle" required>
                             </div>
-                        </div> 
-                        <br> 
+                        </div>
+                        <br>
+                        <div class="form-group-attached">
+                            <div class="form-group form-group-default required">
+                            <label>Odds (numerical)</label>
+                            <input type="text" class="form-control" name="betlingOdds" required>
+                            </div>
+                        </div>
+                        <br>
                         <input type="hidden" name="eventID" value="{{$eventling->id}}">
                         <input type="hidden" name="betID" value="{{$bet->id}}">
-                        <button class="btn btn-success" type="submit">Submit</button> 
+                        <button class="btn btn-success" type="submit">Submit</button>
                         <button class="btn btn-default"><i class="pg-close"></i> Clear</button>
-                        <br/><br/> 
+                        <br/><br/>
                     </form>
                   </div>
                 </div>
@@ -287,12 +281,12 @@ if (isset($_POST['eventName'])) {
           <br>
 
         @endforeach
-                          
+
           </div>
           <!-- END addto div -->
           <button class="btn btn-complete btn-cons col-md-2 col-md-offset-5 addBet">+ Add Bet</button>
                 <!-- END CONTAINER FLUID -->
-                
+
             </div>
             <!-- END PAGE CONTENT -->
             <!-- INCLUDE FOOTEr -->
@@ -301,7 +295,7 @@ if (isset($_POST['eventName'])) {
         <!-- END PAGE CONTENT WRAPPER -->
     </div>
     <!-- END PAGE CONTAINER -->
-    
+
     <!-- INCLUDE QUICKVIEW -->
     @include('layouts.partials.admin.quickview')
 /admin/

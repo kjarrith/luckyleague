@@ -215,7 +215,6 @@ $(document).on('click', '.placebet', function() {
                     data: {i : 1},
                     success: function(data){
                       var response = jQuery.parseJSON(data);
-                      console.log(response.level);
 
                       $('.profile-level').text('Level ' + response.level);
                       $('.needed-xp').text(response.xp_limit);
