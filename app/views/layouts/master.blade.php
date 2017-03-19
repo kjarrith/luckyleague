@@ -111,10 +111,10 @@
 {{--     <a href="#"><div class="sidebar-button red transit05sec">LEADERBORDS</div></a>
     <a href="#"><div class="sidebar-button golden transit05sec">BET STORE</div></a> --}}
         <div class="adbox">
-      <img src="/img/fulfill.jpg"><br>
-      <img src="/img/ellingsen.jpg"><br>
-      <img src="/img/vivio.jpg">
-    </div>
+          <a href="http://arka.is/"><img src="/img/fulfill.jpg"></a><br>
+          <a href="http://ellingsen.is/"><img src="/img/ellingsen.jpg"></a><br>
+          <a href="https://itunes.apple.com/us/app/vivio/id1059998457?mt=8"><img src="/img/vivio.jpg"></a>
+        </div>
   </div>
 </div>
 
