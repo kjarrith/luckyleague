@@ -31,17 +31,28 @@
   <div id="left-sidebar">
 
   <div class="betslip">
-      <div class="betslip-header red">LEADERBOARDS</div>
+      <div class="betslip-header golden">RICHEST</div>
       <ul class="betslip-ul">
-      <?php $number=1?>
-      @foreach($leaderboards as $leader)
-        <li class="betslip-li">
-          <strong>{{$number}}.</strong> {{{$leader->first_name}}}<br/>
-          <strong style="color:#e57373">{{{$leader->current_balance}}} coins</strong> <strong>@</strong> <strong style="color:#81C784">level {{{$leader->level}}}</strong>
-        </li>
-        <?php $number=$number+1?>
-      @endforeach
+        <?php $number=1?>
+        @foreach($leaderboardsRich as $leader)
+          <li class="betslip-li">
+            <strong>{{$number}}.</strong> {{{$leader->first_name}}}<br/>
+            <strong style="color:#e57373">{{{$leader->current_balance}}} coins</strong>
+          </li>
+          <?php $number=$number+1?>
+        @endforeach
+      </ul>
 
+      <div class="betslip-header red">MOST ACTIVE</div>
+      <ul class="betslip-ul">
+        <?php $number2=1?>
+        @foreach($leaderboardsLevel as $leader)
+          <li class="betslip-li">
+            <strong>{{$number2}}.</strong> {{{$leader->first_name}}}<br/>
+            <strong style="color:#e57373">{{{$leader->current_xp}}} xp</strong> <strong>@</strong> <strong style="color:#81C784">level {{{$leader->level}}}</strong>
+          </li>
+          <?php $number2=$number2+1?>
+        @endforeach
       </ul>
     </div>
 

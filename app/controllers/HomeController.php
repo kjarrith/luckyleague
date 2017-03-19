@@ -8,7 +8,7 @@ class HomeController extends BaseController {
 		$lastlogin = Auth::user()->last_online_day;
 		$today = date('Y-m-d');
 
-		if( $lastlogin < $today ) { 
+		if( $lastlogin < $today ) {
 		    // it's sooner than one week ago
 		    Auth::user()->increment('current_balance', 500);
 		}
@@ -34,21 +34,25 @@ class HomeController extends BaseController {
 
 		$level = Level::where('level', '=', $users->level)->first();
 
-		$leaderboards = DB::table('users')
-                    ->orderBy('level', 'desc')
+		$leaderboardsRich = DB::table('users')
                     ->orderBy('current_balance', 'desc')
-                    ->take(10)
+                    ->take(5)
+                    ->get();
+
+        $leaderboardsLevel = DB::table('users')
+                    ->orderBy('current_xp', 'desc')
+                    ->take(5)
                     ->get();
 
 		$xpbarlength = ($users->current_xp / $level->xp_limit)*100;
 
 		$allbets = Betplaced::whereRaw('user_id = ? and status = 1', array($users->id))->get();
-		
-		if ($betcount > 9) 
+
+		if ($betcount > 9)
 		{
 			$betcount = "+";
 		}
-		return View::make('index', compact('users', 'eventlings', 'betslip','categories','betcount','level','xpbarlength','leaderboards','allbets'));
+		return View::make('index', compact('users', 'eventlings', 'betslip','categories','betcount','level','xpbarlength','leaderboardsRich','allbets','leaderboardsLevel'));
 	}
 
 
