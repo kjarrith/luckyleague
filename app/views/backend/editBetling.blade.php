@@ -2,8 +2,8 @@
 
 
 {{ Form::open(array('url' => 'editBetlingPost', 'method' => 'post')) }}
-	{{ Form::hidden('betlingID', 'secret', array('id' => '{{$data->id}}')) }}
 
+	{{ Form::hidden('betlingID', $data->id) }}
 	<input type="text" name="betlingTitle" value="{{$data->title}}">
 
 	<input type="text" name="betlingOdds" value="{{$data->odds}}">
