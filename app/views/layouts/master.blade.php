@@ -37,7 +37,7 @@
         @foreach($leaderboardsRich as $leader)
           <li class="betslip-li">
             <strong>{{$number}}.</strong> {{{$leader->first_name}}}<br/>
-            <strong style="color:#e57373">{{{$leader->current_balance}}} coins</strong>
+            <strong style="color:#e57373">{{{$leader->current_balance}}} coins</strong> <strong>@</strong> <strong style="color:#81C784">level {{{$leader->level}}}</strong>
           </li>
           <?php $number=$number+1?>
         @endforeach
