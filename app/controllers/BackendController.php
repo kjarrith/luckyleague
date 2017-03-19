@@ -17,7 +17,7 @@ class BackendController extends BaseController {
             ->where('id', '=', $_POST['betlingID'])
             ->update(array('title' => $_POST['betlingTitle'], 'odds' => $_POST['betlingOdds']));
 
-            return Redirect::back();
+        return Redirect::to('/live');
 	}
 
 	public function live()

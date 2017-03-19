@@ -1,4 +1,4 @@
-<h1>HELLO WORLD</h1>
+<h1>Edit bet</h1>
 
 
 {{ Form::open(array('url' => 'editBetlingPost', 'method' => 'post')) }}
