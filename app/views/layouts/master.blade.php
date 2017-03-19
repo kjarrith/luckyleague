@@ -42,7 +42,7 @@
           <?php $number=$number+1?>
         @endforeach
       </ul>
-
+      <br><br>
       <div class="betslip-header red">MOST ACTIVE</div>
       <ul class="betslip-ul">
         <?php $number2=1?>
