@@ -36,7 +36,7 @@
       <?php $number=1?>
       @foreach($leaderboards as $leader)
         <li class="betslip-li">
-          <strong>{{$number}}.</strong> {{{$leader->first_name}}} {{{$leader->last_name}}}<br/> 
+          <strong>{{$number}}.</strong> {{{$leader->first_name}}}<br/>
           <strong style="color:#e57373">{{{$leader->current_balance}}} coins</strong> <strong>@</strong> <strong style="color:#81C784">level {{{$leader->level}}}</strong>
         </li>
         <?php $number=$number+1?>
@@ -51,7 +51,7 @@
         <span class="betslip-li-wrap">
 
           <li class="betslip-li">
-            <span class="betslip-title">Manchester wins</span> 
+            <span class="betslip-title">Manchester wins</span>
             <span class="remove-from-betslip transit05sec"><i class="fa fa-times"></i></span><br/>
             <span class="to-win">To Win: <span class="reward"> enter a stake</span> </span>
             <span class="betslip-odds">14/1</span>
@@ -59,11 +59,11 @@
 
           <div class="betslip-stake">
             {{ Form::open(['url' => '', 'data-async', 'name' => 'add_to_betslip']) }}
-              {{ Form::text('stake', NULL, ['placeholder' => 'Your stake', 'class' => 'betslip-input'])}} 
+              {{ Form::text('stake', NULL, ['placeholder' => 'Your stake', 'class' => 'betslip-input'])}}
                <button type="submit" class="betslip-submit">
                   <i class="fa fa-gavel"></i>
               </button>
-            {{ Form::close() }}      
+            {{ Form::close() }}
           </div>
         </span>
       </ul>
@@ -85,7 +85,7 @@
       <div class="profile-photo">
       @if($users->profile_img)
         <img src="{{{ $users->profile_img}}}">
-      @else 
+      @else
         <i class="fa fa-user"></i>
       @endif
       </div>
@@ -104,7 +104,7 @@
       <img src="http://revive.menn.is/www/images/c5cd93da866dc4b470633250f4162f53.jpeg">
     </div>
   </div>
-</div> 
+</div>
 
 <script src="/js/lucky.js"></script>
 

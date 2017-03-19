@@ -78,7 +78,7 @@
                         </li>
                     </ul>
                     <!-- END NOTIFICATION DROPDOWN -->
-                    <a href="#" class="search-link" data-toggle="search"><i class="pg-search"></i>Type anywhere to <span class="bold">search</span></a> 
+                    <a href="#" class="search-link" data-toggle="search"><i class="pg-search"></i>Type anywhere to <span class="bold">search</span></a>
                 </div>
             </div>
             <div class=" pull-right">
@@ -91,7 +91,6 @@
                 <div class="visible-lg visible-md m-t-10">
                     <div class="pull-left p-r-10 p-t-10 fs-16 font-heading">
                         <span class="semi-bold">{{ Auth::user()->first_name }}</span>
-                        <span class="text-master">{{ Auth::user()->last_name }}</span>
                     </div>
                     <div class="thumbnail-wrapper d32 circular inline m-t-5">
                         <img src="{{ Auth::user()->profile_img }}" alt="" data-src="/admin/assets/img/profiles/avatar.jpg" data-src-retina="/admin/assets/img/profiles/avatar_small2x.jpg" width="32" height="32">

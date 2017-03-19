@@ -47,13 +47,10 @@
 			<ul class="signup-form">
 			{{ Form::open(['url' => '/newuser'])}}
 				<li>
-					<div class="form-group w50 first">
-		              <label>First Name</label>
-		              {{ Form::text('firstname', NULL, ['class' => ' transit05sec form-control'])}}
-					</div><div class="form-group w50 second" >
-		              <label>Last Name</label>
-		              {{ Form::text('lastname', NULL, ['class' => ' transit05sec form-control'])}}
-		            </div>
+					<div class="form-group">
+		              <label>Name or Nickname</label>
+		              {{ Form::text('firstname', NULL, ['class' => ' transit05sec form-control w100'])}}
+					</div>
 				</li>
 				<li>
 					<div class="form-group">
