@@ -236,7 +236,7 @@ if (isset($_POST['eventName'])) {
                   <div class="currentBetlings">
                       @foreach($bet->betlings as $betling)
                       <div class="btn-group sm-m-t-10">
-                          <a href="/editBetling">
+                          <a href="/editBetling/{{{$betling->id}}}">
                                                         <button type="button" class="btn btn-default click-editBet" data-betlingID="{{{$betling->id}}}" data-betID="{{{$betling->bet_id}}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             </button>
                           </a>

@@ -48,7 +48,7 @@ Route::group(['before' => 'admin|auth'], function()
 
 
 	// Custom
-	Route::get('editBetling', 'BackendController@editBetling');
+	Route::get('editBetling/{id}', 'BackendController@editBetling');
 });
 
 /**
