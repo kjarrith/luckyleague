@@ -42,13 +42,14 @@ Route::group(['before' => 'admin|auth'], function()
 	Route::post('bet/deleteBet', 'BackendController@deleteBet');
 	Route::post('bet/betWinner', 'BackendController@betWinner');
 	Route::post('bet/betRemoveWinner', 'BackendController@betRemoveWinner');
-	Route::post('bet/editBetling', 'BackendController@editBetling');
+	
 	Route::post('bet/deleteBetling', 'BackendController@deleteBetling');
 
 
 
 	// Custom
 	Route::get('editBetling/{id}', 'BackendController@editBetling');
+	Route::post('editBetling', 'BackendController@editBetling');
 });
 
 /**
