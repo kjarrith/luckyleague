@@ -88,12 +88,16 @@ class EventsController extends BaseController {
 
 		$userId = Auth::user()->id;
 
-		if ($stake <= Auth::user()->current_balance) {
+		if ($stake > Auth::user()->bet_limit){
+			echo "Bet limit exceeded.";
+		} else {
+			if ($stake <= Auth::user()->current_balance) {
 				DB::insert('insert into betsplaced (stake,odds,bet_id,betling_id,user_id,status) values (?,?,?,?,?,1)', array($stake,$odds,$betId,$betlingId,$userId));
 				DB::update('update users set current_balance = current_balance - ?, current_xp = current_xp + ? where id = ?', array($stake,$xpgained,$userId));
 				echo 'true';
-		} else {
-			echo "You don't have enough coins.";
+			} else {
+				echo "You don't have enough coins.";
+			}
 		}
 
 	}
@@ -101,11 +105,15 @@ class EventsController extends BaseController {
 	public function levelUp()
 	{
 		$userId = Auth::user()->id;
+
 		DB::table('users')
             ->where('id', '=', $userId)
             ->increment('level', 1);
 
         $level = Level::where('level', '=', Auth::user()->level + 1)->first();
+
+        DB::update('update users set bet_limit = ? where id = ?', array($level->bet_limit,$userId));
+
         echo json_encode( $level );
 	}
 

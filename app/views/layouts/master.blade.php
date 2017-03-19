@@ -105,7 +105,7 @@
         <div class="profile-xp transit05sec" style="width: {{{$xpbarlength}}}%;"></div>
       </div>
       <span class="profile-xp-score"><span class="current-xp">{{{ $users->current_xp}}}</span> / <span class="needed-xp">{{{$level->xp_limit}}}</span> xp</span><br/>
-      <span class="bet-limit">Current bet limit : <span id="current-bet-limit">{{{$level->bet_limit}}} </span> coins</span>
+      <span class="bet-limit">Current bet limit : <span id="current-bet-limit">{{{$users->bet_limit}}} </span> coins</span>
     </div>
     <a href="#"><div class="sidebar-button transit05sec">Balance: <span class="goldenfont currentUserBalance">{{{ $users->current_balance}}}</span> coins</div></a>
 {{--     <a href="#"><div class="sidebar-button red transit05sec">LEADERBORDS</div></a>

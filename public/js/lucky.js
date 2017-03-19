@@ -65,7 +65,7 @@ $(document).on('click', '.event-bet-option', function(e) {
         } else {
           var bet_odds = $(this).find('.event-bet-odds').text();
           var bet_title = $(this).attr('data-bet-title');
-          
+
           console.log(bet_odds);
           console.log(bet_title);
 
@@ -152,15 +152,15 @@ $(document).on('click', '.placebet', function() {
               .animate({ bottom: "0px" },1000)
               .delay(2500)
               .animate({ bottom: "-200px" }, 1000 )
-          
+
         } else if (newBalance >= 0) {
 
           //INITIATE AJAX IF BALANCE IS MORE THAN 0 AFTER TRANSACTION
           $.ajax({
             type: "POST",
             url: "/createBet",
-            data: { 
-              stake : betstake, 
+            data: {
+              stake : betstake,
               odds : betodds,
               betId : betid,
               betlingId : betlingid
@@ -239,14 +239,14 @@ $(document).on('click', '.placebet', function() {
                   },"json"); // LEVEL UP AJAX ENDS
                 } // IF LEVEL UP ENDS
               } else {
-                  //User is messing with DOM data 
+                  //User is messing with DOM data
                   $( "#attentionBox" )
                     .text(data)
                     .css("background-color", "#ef5350")
                     .animate({ bottom: "0px" },1000)
                     .delay(2500)
                     .animate({ bottom: "-200px" }, 1000 )
-              } //ELSE DATA = TRUE ENDS 
+              } //ELSE DATA = TRUE ENDS
             } // PLACEBET SUCCESS FUNCTION ENDS
           },"json"); // PLACEBET AJAX CALL ENDS
 
@@ -263,12 +263,12 @@ $(document).on('click', '.placebet', function() {
 
 });
 
-$(document).on('keyup', '.event-bet-input', function() {
+$(document).on('keydown', '.event-bet-input', function() {
 
     $('.inUse').removeClass('inUse');
     $(this).addClass('inUse');
 
-    //initiate 
+    //initiate
 
     var node = $('#current-bet-limit');
 
@@ -277,6 +277,7 @@ $(document).on('keyup', '.event-bet-input', function() {
     var bet_limit = node.text();
 
     if (bet_stake>bet_limit ) {
+      event.preventDefault();
       $(this).css( "color", "red" );
       $( "#attentionBox" )
               .text('Watch your bet limit!')
@@ -298,7 +299,7 @@ $(document).on('click', '.addtobetslip', function() {
         var bet_title = $(this).attr('data-bet-title');
 
         var form = '<form method="POST" action="" accept-charset="UTF-8" data-async="data-async" name="add_to_betslip"> <input placeholder="Your stake" class="betslip-input" name="stake" type="text"> <button type="submit" class="betslip-submit"> <i class="fa fa-gavel"></i> </button> </form>';
-        
+
 
         console.log(bet_odds);
         console.log(bet_title);
@@ -330,7 +331,7 @@ $(document).on('click', '.addtobetslip', function() {
         $('.inUse').removeClass('inUse');
         $(this).addClass('inUse');
 
-        //initiate 
+        //initiate
 
         var to_win = "";
 
@@ -348,7 +349,7 @@ $(document).on('click', '.addtobetslip', function() {
         to_win = bet_stake * bet_odds;
 
         console.log(bet_stake);
-        console.log(bet_odds);  
+        console.log(bet_odds);
         console.log(to_win);
 
          $(this).parents('.betslip-li-wrap').find('.reward').text(to_win);
@@ -360,9 +361,9 @@ $(document).on('click', '.addtobetslip', function() {
 
   });
 
-    $(document).on('submit', 'form[data-async]', function(e) { 
+    $(document).on('submit', 'form[data-async]', function(e) {
 
-    
+
       var form = $(this);
 
       var method = form.find('input[name="_method"]').val() || 'POST';
