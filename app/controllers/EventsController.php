@@ -26,10 +26,14 @@ class EventsController extends BaseController {
 
 		$xpbarlength = ($users->current_xp / $level->xp_limit)*100;
 
-		$leaderboards = DB::table('users')
-                    ->orderBy('level', 'desc')
+		$leaderboardsRich = DB::table('users')
                     ->orderBy('current_balance', 'desc')
-                    ->take(10)
+                    ->take(5)
+                    ->get();
+
+        $leaderboardsLevel = DB::table('users')
+                    ->orderBy('current_xp', 'desc')
+                    ->take(5)
                     ->get();
 
         if ($betcount > 9)
@@ -39,7 +43,7 @@ class EventsController extends BaseController {
 
 		//return $betlings;
 
-		return View::make('events.index', compact('eventling', 'users', 'bets', 'leaderboards', 'xpbarlength','level','betcount','activebets','allbets'));
+		return View::make('events.index', compact('eventling', 'users', 'bets', 'leaderboardsRich', 'xpbarlength','level','betcount','activebets','allbets', 'leaderboardsLevel'));
 	}
 
     /**
