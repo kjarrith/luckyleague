@@ -453,6 +453,7 @@ button {
   @media screen and (max-width: 414px) {
     #left-sidebar {
       display: none;
+      overflow: scroll;
       height: auto; } }
 
 #left-sidebar.show {
