@@ -263,7 +263,7 @@ $(document).on('click', '.placebet', function() {
 
 });
 
-$(document).on('keydown', '.event-bet-input', function() {
+$(document).on('keydown', '.event-bet-input', function(event) {
 
     $('.inUse').removeClass('inUse');
     $(this).addClass('inUse');
