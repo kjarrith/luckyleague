@@ -658,6 +658,10 @@ button {
     margin: 0px auto;
     display: block; }
 
+@media screen and (max-width: 414px) {
+    betslip {
+      overflow: scroll; } }
+
 .betslip {
   background-color: #fff;
   width: 85%;
