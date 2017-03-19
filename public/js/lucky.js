@@ -269,6 +269,7 @@ $(document).on('keydown', '.event-bet-input', function() {
     $(this).addClass('inUse');
 
     //initiate
+    var key = event.keyCode || event.charCode;
 
     var node = $('#current-bet-limit');
 
@@ -277,14 +278,17 @@ $(document).on('keydown', '.event-bet-input', function() {
     var bet_limit = node.text();
 
     if (bet_stake>bet_limit ) {
-      event.preventDefault();
-      $(this).css( "color", "red" );
-      $( "#attentionBox" )
-              .text('Watch your bet limit!')
-              .css("background-color", "#ef5350")
-              .animate({ bottom: "0px" },1000)
-              .delay(2500)
-              .animate({ bottom: "-200px" }, 1000 )
+      if (key == 8 || key == 46) {} else {
+        event.preventDefault();
+          $(this).css( "color", "red" );
+
+          $( "#attentionBox" )
+            .text('Watch your bet limit!')
+            .css("background-color", "#ef5350")
+            .animate({ bottom: "0px" },1000)
+            .delay(2500)
+            .animate({ bottom: "-200px" }, 1000 )
+      }
     } else {
       $(this).css( "color", "#555" );
     }
