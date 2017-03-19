@@ -6,7 +6,7 @@ class BackendController extends BaseController {
 	public function editBetling($id)
 	{
 
-		$data = Betlings::where('id', '=', $id)->get();
+		$data = Betling::where('id', '=', $id)->get();
 
 		return View::make('backend.editBetling', compact('data'));
 	}
