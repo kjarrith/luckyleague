@@ -3,9 +3,12 @@
 class BackendController extends BaseController {
 
 
-	public function editBetling()
+	public function editBetling($id)
 	{
-		return View::make('backend.editBetling');
+
+		$betlings = Bet::with('betlings')->get();
+
+		return View::make('backend.editBetling', compact('betlings'));
 	}
 
 
