@@ -9,6 +9,15 @@ class BackendController extends BaseController {
 	}
 
 
+	public function editBetlingStore()
+	{
+		DB::table('betlings')
+            ->where('id', '=', $_POST['betlingID'])
+            ->update(array('title' => $_POST['betlingTitle'], 'odds' => $_POST['betlingOdds']));
+
+            return Redirect::back();
+	}
+
 	public function live()
 	{
 		$categories = Category::where('status', '=', 1)->get();
@@ -133,14 +142,7 @@ class BackendController extends BaseController {
             ->update(array('status' => 2));
 	}
 
-	public function editBetling()
-	{
-		DB::table('betlings')
-            ->where('id', '=', $_POST['betlingID'])
-            ->update(array('title' => $_POST['betlingTitle'], 'odds' => $_POST['betlingOdds']));
 
-            return Redirect::back();
-	}
 
 	public function deleteBetling()
 	{
