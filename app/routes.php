@@ -45,6 +45,10 @@ Route::group(['before' => 'admin|auth'], function()
 	Route::post('bet/editBetling', 'BackendController@editBetling');
 	Route::post('bet/deleteBetling', 'BackendController@deleteBetling');
 
+
+
+	// Custom
+	Route::get('editBetling', 'BackendController@editBetling');
 });
 
 /**

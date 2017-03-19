@@ -2,6 +2,13 @@
 
 class BackendController extends BaseController {
 
+
+	public function editBetling()
+	{
+		return View::make('backend.editBetling');
+	}
+
+
 	public function live()
 	{
 		$categories = Category::where('status', '=', 1)->get();
