@@ -111,9 +111,9 @@
 {{--     <a href="#"><div class="sidebar-button red transit05sec">LEADERBORDS</div></a>
     <a href="#"><div class="sidebar-button golden transit05sec">BET STORE</div></a> --}}
         <div class="adbox">
-          <a href="http://fulfilnutrition.com/"><img src="/img/fulfill.jpg"></a><br>
-          <a href="http://ellingsen.is/"><img src="/img/ellingsen.jpg"></a><br>
-          <a href="https://itunes.apple.com/us/app/vivio/id1059998457?mt=8"><img src="/img/vivio.png"></a>
+          <a href="http://fulfilnutrition.com/" target="_blank"><img src="/img/fulfill.jpg"></a><br>
+          <a href="http://ellingsen.is/" target="_blank"><img src="/img/ellingsen.jpg"></a><br>
+          <a href="https://itunes.apple.com/us/app/vivio/id1059998457?mt=8" target="_blank"><img src="/img/vivio.png"></a>
         </div>
   </div>
 </div>
