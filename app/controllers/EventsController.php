@@ -32,7 +32,7 @@ class EventsController extends BaseController {
                     ->take(10)
                     ->get();
 
-        if ($betcount > 9) 
+        if ($betcount > 9)
 		{
 			$betcount = "+";
 		}
@@ -85,7 +85,7 @@ class EventsController extends BaseController {
 		$userId = Auth::user()->id;
 
 		if ($stake <= Auth::user()->current_balance) {
-				DB::insert('insert into betsplaced (stake,odds,bet_id,betling_id,user_id) values (?,?,?,?,?)', array($stake,$odds,$betId,$betlingId,$userId));
+				DB::insert('insert into betsplaced (stake,odds,bet_id,betling_id,user_id,status) values (?,?,?,?,?,1)', array($stake,$odds,$betId,$betlingId,$userId));
 				DB::update('update users set current_balance = current_balance - ?, current_xp = current_xp + ? where id = ?', array($stake,$xpgained,$userId));
 				echo 'true';
 		} else {
