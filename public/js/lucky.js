@@ -167,8 +167,8 @@ $(document).on('click', '.placebet', function() {
             },
             success: function(data){
 
-              $(this).closest('.bet-actions').find('.fa-circle-o-notch').hide();
-              $(this).closest('.bet-actions').find('.fa-gavel').show();
+              $thisel.closest('.bet-actions').find('.fa-circle-o-notch').hide();
+              $thisel.closest('.bet-actions').find('.fa-gavel').show();
 
               if(data=='true'){
                 //MAKE CHANGES TO DOM
@@ -245,6 +245,7 @@ $(document).on('click', '.placebet', function() {
                     .animate({ bottom: "0px" },1000)
                     .delay(2500)
                     .animate({ bottom: "-200px" }, 1000 )
+
               } //ELSE DATA = TRUE ENDS
             } // PLACEBET SUCCESS FUNCTION ENDS
           },"json"); // PLACEBET AJAX CALL ENDS
