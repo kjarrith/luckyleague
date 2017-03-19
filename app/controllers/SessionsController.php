@@ -59,8 +59,9 @@ class SessionsController extends \BaseController {
 		}
 		else if ($invites > 0)
 		{
+			$defaultImg = "http://vi.is/myndir/undirs%C3%AD%C3%B0ur/2014_10_17_verzlo_logo.png";
 
-			DB::insert('insert into users (email,password,first_name,last_name,level,current_xp,current_balance) values (?,?,?,?,1,0,5000)', array($input['email'],$passwordhash,$input['firstname'],$input['lastname']));
+			DB::insert('insert into users (profile_img,email,password,first_name,last_name,level,current_xp,current_balance) values (?,?,?,?,?,1,0,5000)', array($defaultImg, $input['email'],$passwordhash,$input['firstname'],$input['lastname']));
 
 			$attempt = Auth::attempt([
 				'email' => $input['email'],

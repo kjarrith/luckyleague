@@ -27,13 +27,14 @@ Route::post('/levelUp', 'EventsController@levelUp');
  */
 Route::group(['before' => 'admin|auth'], function()
 {
-
+	// Routes
 	Route::get('live', 'BackendController@live');
 	Route::get('backend', 'BackendController@index');
-	Route::post('backend', 'BackendController@createEvent');
 	Route::get('category', 'BackendController@category');
-	Route::post('category', 'BackendController@createCategory');
 	Route::get('bet/{id}', 'BackendController@bet');
+	// Posts
+	Route::post('backend', 'BackendController@createEvent');
+	Route::post('category', 'BackendController@createCategory');
 	Route::post('bet/createNewBet', 'BackendController@createNewBet');
 	Route::post('bet/createNewBetling', 'BackendController@createNewBetling');
 	Route::post('bet/deleteEvent', 'BackendController@deleteEvent');
