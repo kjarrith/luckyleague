@@ -1,7 +1,7 @@
 <h1>HELLO WORLD</h1>
 
 
-{{title}}
+{{$betlings->title}}
 
 
-{{odds}}
+{{$betlings->odds}}
