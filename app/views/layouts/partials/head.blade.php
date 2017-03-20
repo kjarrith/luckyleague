@@ -34,3 +34,13 @@
 
 {{-- GOOGLE ANALYTICS --}}
 @include('layouts.partials.tracking')
+
+{{-- GOOGLE AD SENSE --}}
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2371978200275310",
+    enable_page_level_ads: true
+  });
+</script>
