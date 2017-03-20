@@ -935,6 +935,14 @@ button {
   margin-top: 20px; }
   .event-bets .event-bet .first {
     border: none; }
+
+@media screen and (max-width: 414px) {
+  .event-bets .event-bet-header {
+    font-size: 1.5em;
+    height: auto;
+  }
+}
+
 .event-bets .event-bet-header {
   padding: 5px 0px;
   width: 100%;
@@ -947,6 +955,13 @@ button {
   text-transform: uppercase; }
 .event-bets .event-bet-link {
   font-size: 0; }
+@media screen and (max-width: 414px) {
+  .event-bets .event-bet-option {
+    overflow: scroll;
+    padding: 10px 2px;
+    font-size: 11px;
+  }
+}
 .event-bets .event-bet-option {
   margin: 0px;
   padding: 10px;
@@ -1048,6 +1063,14 @@ button {
   color: #999;
   padding: 2px 0px;
   font-weight: bold; }
+
+@media screen and (max-width: 414px) {
+  .event-bets .event-bet-odds {
+    color: #FFECB3;
+    font-size: 0.7em;
+    margin-left: 3px; }
+}
+
 .event-bets .event-bet-odds {
   color: #FFECB3;
   font-size: 0.8em;
