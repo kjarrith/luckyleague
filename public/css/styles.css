@@ -957,7 +957,6 @@ button {
   font-size: 0; }
 @media screen and (max-width: 414px) {
   .event-bets .event-bet-option {
-    overflow: scroll;
     padding: 10px 2px;
     font-size: 11px;
   }
