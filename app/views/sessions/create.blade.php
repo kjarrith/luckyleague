@@ -16,7 +16,7 @@
 		<button type="button" class="login-nav login transit05sec">LOGIN</button>
 
 			<ul class="login-form">
-			{{ Form::open(['url' => URL::to('/sessions', array(), true)])}}
+			{{ Form::open(['route' => 'sessions.store'])}}
 				<li>
 					<div class="form-group">
 		              <label>Email</label>
@@ -45,7 +45,7 @@
 			</ul>
 
 			<ul class="signup-form">
-			{{ Form::open(['url' => URL::to('/newuser', array(), true)])}}
+			{{ Form::open(['url' => '/newuser'])}}
 				<li>
 					<div class="form-group">
 		              <label>Name or Nickname</label>
