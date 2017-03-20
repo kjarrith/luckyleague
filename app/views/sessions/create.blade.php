@@ -45,7 +45,7 @@
 			</ul>
 
 			<ul class="signup-form">
-			{{ Form::open(['url' => '/newuser'])}}
+			{{ Form::open(['url' => URL::to('/newuser', array(), true)])}}
 				<li>
 					<div class="form-group">
 		              <label>Name or Nickname</label>
